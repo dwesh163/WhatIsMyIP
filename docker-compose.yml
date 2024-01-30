@@ -6,7 +6,7 @@ services:
         command: /bin/sh -c "cd /srv/app && npm install && node index.js"
         working_dir: /srv/app
         network_mode: host
-        restart: always
+        restart: never
         volumes:
             - type: bind
               source: ./
