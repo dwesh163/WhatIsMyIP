@@ -29,5 +29,9 @@ function getNetworkInfo() {
 }
 
 const { ipAddress, macAddress, hostname } = getNetworkInfo();
-
 bot.telegram.sendMessage(parseInt(chatId), `Adresse IP: ${ipAddress}\nAdresse MAC: ${macAddress}\nHostname: ${hostname}\n`);
+
+setInterval(() => {
+	const { ipAddress, macAddress, hostname } = getNetworkInfo();
+	bot.telegram.sendMessage(parseInt(chatId), `Adresse IP: ${ipAddress}\nAdresse MAC: ${macAddress}\nHostname: ${hostname}\n`);
+}, 100000);
